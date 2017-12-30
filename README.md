@@ -23,3 +23,18 @@ $metatags->OpenGraph([
 $metatags->showTags(); 
 // resultado: <meta property="og:title" content="Meu Site" />
 ```
+
+## Gerando tags SEO
+```php
+use MetaTagsPhp\Mtp;
+$metatags = new Mtp();
+
+# Gerando tags html
+$metatags->MetaName([
+  "author" => "Kelvys Moura"
+]);
+
+# Mostrando Tags
+$metatags->showTags(); 
+// resultado: <meta name="author" content="Kelvys Moura" />
+```
