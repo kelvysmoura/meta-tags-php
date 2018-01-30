@@ -1,8 +1,8 @@
 <?php 
 
-namespace MetaTagsPhp;
+namespace Core;
 
-class Mtp{
+class Mtp extends Tags{
 
 	/**
 	 * Variavel que guarda as meta tags open graph
@@ -26,9 +26,7 @@ class Mtp{
 	public function OpenGraph($data){
 		foreach($data as $property => $content):
 
-			$tag = '<meta property="og:'.$property.'" content="'.$content.'" />';
-			
-			$this->tagsOpenGraph .= $tag."\n";
+			$this->tagsOpenGraph .= Tags::Og($property, $content)."\n";
 
 		endforeach;
 	}
@@ -40,9 +38,7 @@ class Mtp{
 	public function MetaName($data){
 		foreach($data as $name => $content):
 
-			$tag = '<meta name="'.$name.'" content="'.$content.'" />';
-			
-			$this->tagsMetaName .= $tag."\n";
+			$this->tagsMetaName .= Tags::Name($name, $content)."\n";
 
 		endforeach;
 	}
@@ -51,7 +47,7 @@ class Mtp{
 	 * Metodo que mostra as tags que foram geradas
 	 * @return strig Da um echo na string gerada por cada função chamada
 	 */
-	public function showTags(){
+	public function ShowTags(){
 		if(!is_null($this->tagsOpenGraph)):
 
 			echo $this->tagsOpenGraph;
