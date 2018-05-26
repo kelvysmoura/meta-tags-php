@@ -1,0 +1,6 @@
+$mtp->img("OpenGraph", [
+	'url' => 'http://www.dominio.com/img.png',
+	'secure_url' => 'https://www.dominio.com/img.png',
+	'type' => 'image/jpg',
+	'width' => 
+]);
